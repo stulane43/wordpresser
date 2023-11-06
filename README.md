@@ -1,108 +1,75 @@
-# Wordpresser
+# WordPresser: Automated WordPress Vulnerability Management
+
+WordPresser is an integrated vulnerability management toolchain built to identify and manage vulnerabilities in WordPress installations. This solution taps into the power of Pantheon's Terminus CLI and WPScan's API, offering a non-intrusive method of ascertaining vulnerabilities in WordPress plugins.
+
+## 🚀 Key Features
+
+- **Pantheon's Terminus CLI Integration**: Efficiently fetches WordPress sites and their installed plugins.
+- **WPScan API Lookup**: Queries WPScan's API to fetch vulnerability data for each identified plugin, as opposed to active scanning.
+- **Alerting Mechanism**: Utilizes `pymsteams` to forward detailed vulnerability alerts to Microsoft Teams.
+- **Database Operations**: Engages a custom database for structured data storage, retrieval, and analysis.
+- **SharePoint Integration**: Pushes database snapshots to SharePoint for data retention and sharing.
+- **PowerBI Reporting**: Provides a graphical interface for users to introspect site details, plugin versions, and associated vulnerabilities.
+
+## 💡 Technical Stack
+
+- **Python**: Core scripting and automation.
+- **Pantheon's Terminus CLI**: Facilitates WordPress site and plugin discovery.
+- **WPScan**: Sourced for vulnerability details via its RESTful API.
+- **pymsteams**: Powers Microsoft Teams notifications.
+- **Pandas**: Data manipulation and CSV operations.
+- **Requests**: Manages API interactions.
+
+## 📋 Getting Started
+
+### Prerequisites
+
+- A working Python environment (Python 3.x recommended).
+- API access to WPScan.
+- Pantheon Terminus CLI configured and authenticated.
+- Microsoft Teams Webhook for notifications.
+
+### Installation
+
+1. Clone this repository:
+
+2. Navigate to the project directory and install the required dependencies:
 
 
-## Dependencies
+### Configuration
 
-This project uses the following third-party software:
+Before you begin, ensure you've set up and configured the necessary integrations in the `settings.py`:
 
-- `certifi` - Certifi provides Mozilla’s carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.
-  - License: Mozilla Public License 2.0 (MPL-2.0)
-- `paramiko` - Paramiko is a pure-Python [1] (3.6+) implementation of the SSHv2 protocol [2], providing both client and server functionality.
-  - License: GNU Lesser General Public License, version 3.0 (LGPL-3.0)
+- Terminus CLI configurations
+- WPScan API keys
+- Database configurations
+- Microsoft Teams Webhook
+- SharePoint details for data uploads
+- PowerBI setup details (if applicable)
 
-## Licensing
+## 🖥️ Usage
 
-The `certifi` library is licensed under the MPL 2.0 license. See the [LICENSE.txt](./LICENSE.txt) file for details.
+Once configurations are in place:
 
-The `paramiko` library is licensed under the LGPL 3.0 license. See the [LICENSE-LGPL.txt](./LICENSE-LGPL.txt) file for details.
+1. **Discovery & Analysis**:
 
-See the LICENSE.txt, LICENSE-LGPL.txt, and NOTICE.txt files for details.
 
-## Getting started
+2. **Alerting**:
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+3. **Reporting**:
+- This process is automated via the PowerBI interface, fetching data uploaded to SharePoint.
 
-## Add your files
+## ✅ Benefits & Insights
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+- **Non-Intrusive Operation**: By directly interacting with WPScan's API instead of scanning sites, there's a substantial reduction in network noise and potential detection by intrusion detection systems.
+- **Comprehensive Reporting**: With data storage on SharePoint and visualization through PowerBI, teams can easily introspect vulnerabilities, their associated risks, and the required mitigation steps.
+- **Automated Workflows**: Eliminates manual efforts, offering a systematic approach to WordPress vulnerability management.
 
-```
-cd existing_repo
-git remote add origin https://codex.prh.com/people/prh-it-staff/it-security/wordpresser.git
-git branch -M dev
-git push -uf origin dev
-```
+## 🤝 Contribution
 
-## Integrate with your tools
+Feel free to fork this repository and submit pull requests. For major changes, open an issue first to discuss what you would like to change.
 
-- [ ] [Set up project integrations](https://codex.prh.com/people/prh-it-staff/it-security/wordpresser/-/settings/integrations)
+## 📜 License
 
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
