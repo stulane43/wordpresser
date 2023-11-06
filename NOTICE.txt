@@ -1,0 +1,7 @@
+This project includes the following third-party software, which is subject to the following license:
+
+certifi - Certifi provides Mozilla’s carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.
+License: Mozilla Public License 2.0
+
+paramiko - Paramiko is a pure-Python [1] (3.6+) implementation of the SSHv2 protocol [2], providing both client and server functionality.
+License: GNU Lesser General Public License, version 3.0 (LGPL-3.0)

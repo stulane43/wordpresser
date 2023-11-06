@@ -1,6 +1,22 @@
-# snyk_python_project
+# Wordpresser
 
 
+## Dependencies
+
+This project uses the following third-party software:
+
+- `certifi` - Certifi provides Mozilla’s carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.
+  - License: Mozilla Public License 2.0 (MPL-2.0)
+- `paramiko` - Paramiko is a pure-Python [1] (3.6+) implementation of the SSHv2 protocol [2], providing both client and server functionality.
+  - License: GNU Lesser General Public License, version 3.0 (LGPL-3.0)
+
+## Licensing
+
+The `certifi` library is licensed under the MPL 2.0 license. See the [LICENSE.txt](./LICENSE.txt) file for details.
+
+The `paramiko` library is licensed under the LGPL 3.0 license. See the [LICENSE-LGPL.txt](./LICENSE-LGPL.txt) file for details.
+
+See the LICENSE.txt, LICENSE-LGPL.txt, and NOTICE.txt files for details.
 
 ## Getting started
 
@@ -15,14 +31,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://codex.prh.com/people/prh-it-staff/it-security/snyk_python_project.git
+git remote add origin https://codex.prh.com/people/prh-it-staff/it-security/wordpresser.git
 git branch -M dev
 git push -uf origin dev
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://codex.prh.com/people/prh-it-staff/it-security/snyk_python_project/-/settings/integrations)
+- [ ] [Set up project integrations](https://codex.prh.com/people/prh-it-staff/it-security/wordpresser/-/settings/integrations)
 
 ## Collaborate with your team
 
